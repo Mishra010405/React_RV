@@ -15,9 +15,25 @@ function customRender(reactElement, container) {
 // }
 
 
-    // Another Wys To Set the Attributes....
+    // Another Wys To Set the by Using the For loop Attributes....
 
-    
+    const domElement = document.createElement(reactElement.type);
+
+    // Add text
+    domElement.innerHTML = reactElement.children;
+
+    // Add all props as attributes
+    for (const prop in reactElement.props) {
+
+        domElement.setAttribute(prop, reactElement.props[prop]);
+    }
+
+    // Add to DOM
+    container.appendChild(domElement);
+
+}
+
+
 
 // React-like Object
 const reactElement = {
