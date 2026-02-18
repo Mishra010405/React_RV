@@ -1,4 +1,9 @@
-
+function customRender(reactElement , Container) {
+    const domElement = document.createElement(reactElement, type)
+    domElement.innerHTML = reactElement.children
+    domElement.setAttribute('href', reactElement.props)
+    
+}
 
 const reactElement = {
     type : 'a',
