@@ -16,8 +16,10 @@ function App() {
 
 
   const removeValue = () => {
-    // counter = counter-1;
+    
     setcounter(counter-1);
+    console.log(counter);
+    
     
   }
  
