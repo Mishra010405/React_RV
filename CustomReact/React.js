@@ -1,18 +1,33 @@
-function customRender(reactElement , Container) {
-    const domElement = document.createElement(reactElement, type)
-    domElement.innerHTML = reactElement.children
-    domElement.setAttribute('href', reactElement.props)
-    
+function customRender(reactElement, container) {
+
+    // Create HTML element
+    const domElement = document.createElement(reactElement.type);
+
+    // Add text
+    domElement.innerHTML = reactElement.children;
+
+    // Add attributes
+    domElement.setAttribute("href", reactElement.props.href);
+    domElement.setAttribute("target", reactElement.props.target);
+
+    // Add to DOM
+    container.appendChild(domElement);
 }
 
+
+// React-like Object
 const reactElement = {
-    type : 'a',
-    props : {
-        href : 'http://google.com',
-        target : '_blank',
+    type: "a",
+    props: {
+        href: "https://google.com",
+        target: "_blank"
     },
-    children: 'CLick ME to Visit the Google'
-}
+    children: "Click Me to Visit Google"
+};
 
-const mainContainer = document.querySelector('#root')
-customReact(reactElement, mainContainer)
+
+// Select root div
+const mainContainer = document.querySelector("#root");
+
+// Render element
+customRender(reactElement, mainContainer);
