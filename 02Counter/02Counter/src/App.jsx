@@ -13,18 +13,12 @@ function App() {
     setcounter(counter)
     console.log(counter)
   }
-
-
   const removeValue = () => {
     if(counter > 0) {
       setcounter(counter-1);
       console.log(counter);
      
     }
-    
-    
-    
-    
   }
  
   return (
@@ -45,5 +39,6 @@ function App() {
     </>
   )
 }
+
 
 export default App
