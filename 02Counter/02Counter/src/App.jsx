@@ -30,8 +30,11 @@ function App() {
       <button onClick={addvalue}>Add Value {counter}</button>
       <br />
 
-      
+
       <button onClick={removeValue}>Remove Counter : {counter}</button>
+
+      <br/>
+      <p>Footer : {counter}</p>
 
     </>
   )
