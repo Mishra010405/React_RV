@@ -1,19 +1,23 @@
 function customRender(reactElement, container) {
 
-    // Create HTML element
-    const domElement = document.createElement(reactElement.type);
+//     // Create HTML element
+//     const domElement = document.createElement(reactElement.type);
 
-    // Add text
-    domElement.innerHTML = reactElement.children;
+//     // Add text
+//     domElement.innerHTML = reactElement.children;
 
-    // Add attributes
-    domElement.setAttribute("href", reactElement.props.href);
-    domElement.setAttribute("target", reactElement.props.target);
+//     // Add attributes
+//     domElement.setAttribute("href", reactElement.props.href);
+//     domElement.setAttribute("target", reactElement.props.target);
 
-    // Add to DOM
-    container.appendChild(domElement);
-}
+//     // Add to DOM
+//     container.appendChild(domElement);
+// }
 
+
+    // Another Wys To Set the Attributes....
+
+    
 
 // React-like Object
 const reactElement = {
