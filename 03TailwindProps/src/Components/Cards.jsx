@@ -16,7 +16,7 @@ function Cards({username,Name, btntext }) {
 <div>
    
   <h2>Hi, My Name is Shivam Mishra</h2>
-  
+  <p>This project is made by me.</p>
 
 
 <h1 class="blue-text">
