@@ -22,7 +22,7 @@ function App() {
 
       <Cards username = "Shivam Mishra " btntext = " Visit Me" />
       <br/>
-      <Cards Name = "Virat Kohli" btntext= " click Me " />
+      <Cards Name = "Virat Kohli" btntext= " click Me "  someobj={arr}/>
 
 
     </>
