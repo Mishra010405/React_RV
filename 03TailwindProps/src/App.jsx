@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <h1 className='bg-green-400 text-black p-4 mb-4 rounded-xl'  >Hii, My Name is Shivam Mishra</h1>
-    <p className='bg-green-400 text-black p-4 mb-4 rounded-xl' >This project is made by me. By Useing Some Components OdF The Props</p>
+    <p className='bg-green-400 text-black p-4 mb-4 rounded-xl' >This project is made by me. By Using Some Components of The Props</p>
 
     
 <br/>
