@@ -14,6 +14,11 @@ function Cards({username,Name, btntext }) {
 
  <>
 <div>
+   
+  <h2>Hi, My Name is Shivam Mishra</h2>
+  
+
+
 <h1 class="blue-text">
     {username} {Name}</h1>
   <h4>Probably the finest cricketer in the world</h4> 
@@ -34,7 +39,7 @@ function Cards({username,Name, btntext }) {
   <li>2007 - T20(Domestic) Debut</li>
   <li>2008 - Captained the victorious Indian team at Uner-19 World Cup</li>
   <li>Aug 2008 - ODI debut against Sri Lanka</li>
-     <li>Jun 2010 - T20I Debut</li>
+    <li>Jun 2010 - T20I Debut</li>
   <li>Jun 2011 - Test Debut</li>
        <li>Dec 2009 - First ODI century</li>
     <li>2012 - Appointed the vice-captain of the ODI team</li>
