@@ -1,54 +1,49 @@
-import { useCallback, useState ,  } from 'react'
+import { useCallback, useEffect, useState ,  } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [length, SetLength] = useState(8);
-  const [numberAllowed , setNumberAllowed] = useState(false);
-  const [charallowed, setCharactoAllowed] = useState(false);
-  const [password , setPassword] = useState("")
+  const [length, setLength] = useState(8);
+  const [numberAllowed, setNumberAllowed] = useState(false);
+  const [charAllowed, setCharAllowed] = useState(false);
+  const [password, setPassword] = useState("");
 
+  const passwordGenerator = useCallback(() => {
+    let pass = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-  const passwordGenerator  = useCallback(() => {
-    let pass = ""
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+    if (numberAllowed) str += "0123456789";
+    if (charAllowed) str += "!@#$%^&*()_+-={}[]|:;<>,.?/~";
 
-    if(numberAllowed) str += "0123456789"
-    if(charallowed) str += "!@#$%^&*()_+-={}[]|\:;<>,.?/~"
-
-
-    for(let i=1 ; i<=length ; i++) {
-      let char = Math.floor(Math.random()*str.length +1)
+    for (let i = 1; i <= length; i++) {
+      let charIndex = Math.floor(Math.random() * str.length);
+      pass += str.charAt(charIndex);
     }
 
-    pass = str.charAt(char)
+    setPassword(pass);
+  }, [length, charAllowed, numberAllowed]);
 
-    setPassword(pass)
-
-  } , [length , charallowed , numberAllowed,setPassword])
-
-
-
-
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, charAllowed, numberAllowed, passwordGenerator]);
 
 
   return (
    
    <>
-  <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-yellow-800 text-orange-500">
+  <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-yellow-800 text-yellow-900">
 
     <h3 className="text-white text-center my-3">
       Password Generator
     </h3>
 
-    
-    <div className="flex shadow rounded-lg text-white  overflow-hidden mb-4">
+    <div className="flex shadow rounded-lg text-white overflow-hidden mb-4">
 
       <input
         type="text"
         value={password}
-        className="outline-none text-white  w-full py-1 px-3"
+        className="outline-none text-white w-full py-1 px-3 bg-transparent"
         placeholder="Password"
         readOnly
       />
@@ -59,10 +54,8 @@ function App() {
 
     </div>
 
-    
-    <div className="flex text-sm  text-white gap-y-3">
+    <div className="flex flex-col text-sm text-white gap-y-3">
 
-    
       <div className="flex items-center gap-x-2">
 
         <input
@@ -71,15 +64,14 @@ function App() {
           max={100}
           value={length}
           className="cursor-pointer"
-          onChange={(e) =>SetLength(e.target.value)}
+          onChange={(e) => setLength(e.target.value)}
         />
 
         <label>Length: {length}</label>
 
       </div>
 
-      
-      <div className="flex items-center  text-white gap-x-2 px-2 py-1">
+      <div className="flex items-center text-white gap-x-2 px-2 py-1">
 
         <input
           type="checkbox"
@@ -97,16 +89,15 @@ function App() {
 
       </div>
 
-      
       <div className="flex items-center gap-x-2">
 
         <input
           type="checkbox"
           id="characterInput"
           className="cursor-pointer"
-          checked={charallowed}
+          checked={charAllowed}
           onChange={() =>
-            setCharactoAllowed((prev) => !prev)
+            setCharAllowed((prev) => !prev)
           }
         />
 
@@ -120,7 +111,8 @@ function App() {
 
   </div>
 </>
-  )
-}
+
+        )}
+
 
 export default App
