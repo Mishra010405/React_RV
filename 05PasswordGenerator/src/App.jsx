@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState ,  } from 'react'
+import { useCallback, useEffect, useRef, useState ,  } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,6 +8,9 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
+
+  // useref hook
+  const passwordRef = useRef(null)
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -24,6 +27,13 @@ function App() {
     setPassword(pass);
   }, [length, charAllowed, numberAllowed]);
 
+  const copytoClipboard = useCallback(() => {
+    passwordRef.current?.select()
+    // passwordRef.current?.setSelectionRange(0,5)
+    window.navigator.clipboard.writeText(password)
+
+  }, [password])
+
   useEffect(() => {
     passwordGenerator();
   }, [length, charAllowed, numberAllowed, passwordGenerator]);
@@ -32,7 +42,7 @@ function App() {
   return (
    
    <>
-  <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-yellow-800 text-yellow-900">
+  <div className="w-full w-screen max-w-xl mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-yellow-800 text-yellow-900">
 
     <h3 className="text-white text-center my-3">
       Password Generator
@@ -46,9 +56,10 @@ function App() {
         className="outline-none text-white w-full py-1 px-3 bg-transparent"
         placeholder="Password"
         readOnly
+        ref={passwordRef}
       />
 
-      <button className="bg-blue-600 text-white px-3">
+      <button onClick={copytoClipboard} className="bg-blue-600 text-white px-3">
         Copy
       </button>
 
@@ -89,7 +100,7 @@ function App() {
 
       </div>
 
-      <div className="flex items-center gap-x-2">
+      <div className="flex items-center gap-x-2 px-2">
 
         <input
           type="checkbox"
