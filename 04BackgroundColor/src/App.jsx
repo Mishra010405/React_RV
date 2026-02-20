@@ -10,6 +10,7 @@ function App() {
   
   return (
     <>
+    
       <div
         className="transition-all duration-300 flex items-end justify-center"
         style={{ backgroundColor: color }}
