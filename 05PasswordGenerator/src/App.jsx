@@ -42,6 +42,10 @@ function App() {
   return (
    
    <>
+   <h1 className="text-2xl md:text-3xl font-bold text-center text-white mb-4 tracking-wide">
+  This is a Password Generator Website Made by Me
+</h1>
+    <br/>
   <div className="w-full w-screen max-w-xl mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-yellow-800 text-yellow-900">
 
     <h3 className="text-white text-center my-3">
