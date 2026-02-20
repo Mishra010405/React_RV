@@ -18,7 +18,7 @@ function App() {
     if(charallowed) str += "!@#$%^&*()_+-={}[]|\:;<>,.?/~"
 
 
-    for(let i=1 ; i<=Array.length ; i++) {
+    for(let i=1 ; i<=length ; i++) {
       let char = Math.floor(Math.random()*str.length +1)
     }
 
@@ -26,7 +26,7 @@ function App() {
 
     setPassword(pass)
 
-  } , [length , charallowed , numberAllowed])
+  } , [length , charallowed , numberAllowed,setPassword])
 
 
 
@@ -36,7 +36,21 @@ function App() {
   return (
    
    <>
-   <h1>Hii My Name IS Shivam Mishra</h1>
+   <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500'>
+    <h1 className='text-white text-center my-3' > Password Generaotor </h1>
+
+    <div className='flex shadow rounded-lg ovwerflow-hidden mb-4'>
+      <input
+      type='text'
+      value={password}
+      className='outline-none w-full py-1 px-3 '
+      placeholder='Password'
+      readOnly
+      />
+      <button>Copy</button>
+    </div>
+   </div>
+
    </>
   )
 }
