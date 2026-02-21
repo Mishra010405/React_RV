@@ -1,32 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
-
-
-
-
+import InputBox from './components/inputbox.jsx'
 
 function App() {
-  const [amount , setAmount] = useState(0);
-  const [from , setFrom] = useState("usd");
-  const [to,setTo]  = useState("inr")
-  const [convertedAmount  , setConvertedAmount] = useState(0);
-  const currencyInfo = useCurrencyInfo(from)
 
+  const [amount, setAmount] = useState(0)
+  const [from, setFrom] = useState("usd")
+  const [to, setTo] = useState("inr")
+  const [convertedAmount, setConvertedAmount] = useState(0)
+
+  const currencyInfo = useCurrencyInfo(from)
   const options = Object.keys(currencyInfo)
 
   const swap = () => {
-    setFrom(to);
-    setTo(from)
-    setAmount(convertedAmount)
-    setConvertedAmount(amount)
+    const tempFrom = from
+    const tempAmount = amount
 
+    setFrom(to)
+    setTo(tempFrom)
+
+    setAmount(convertedAmount)
+    setConvertedAmount(tempAmount)
   }
 
   const convert = () => {
-    setConvertedAmount(amount*currencyInfo[to])
+    if (!currencyInfo[to]) return
+    setConvertedAmount(amount * currencyInfo[to])
   }
 
   return (
@@ -39,38 +39,35 @@ function App() {
       >
         <div className="w-full">
           <div className="w-full max-w-md mx-auto bg-yellow-200 p-6 rounded-lg shadow-lg">
+
             <form
               onSubmit={(e) => {
                 e.preventDefault()
                 convert()
               }}
             >
-              {/* From Input */}
+
               <div className="w-full mb-1">
                 <InputBox
                   label="From"
                   amount={amount}
                   currencyOptions={options}
-                  onAmountChange={(value) => setAmount(value)}
+                  onAmountChange={(value) => setAmount(Number(value))}
                   onCurrencyChange={(currency) => setFrom(currency)}
                   selectCurrency={from}
                 />
               </div>
 
-              {/* Middle Button (Swap) */}
               <div className="relative w-full h-0.5 my-3">
                 <button
-                  
                   type="button"
                   onClick={swap}
                   className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-3 py-1"
                 >
                   Swap
-              
                 </button>
               </div>
 
-              {/* To Input */}
               <div className="w-full mt-1 mb-4">
                 <InputBox
                   label="To"
@@ -82,17 +79,19 @@ function App() {
                 />
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
               >
                 Convert
               </button>
+
             </form>
+
           </div>
         </div>
       </div>
+      
     </>
   )
 }
