@@ -5,7 +5,7 @@ function useCurrencyInfo(currency) {
 
   useEffect(() => {
     fetch(
-      `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json` // It con on;y convert usd to inr  Because it use to define the api of only one currency....
+      `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json` 
     )
       .then((res) => res.json())
       .then((res) => setData(res[currency]))
