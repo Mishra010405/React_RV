@@ -8,11 +8,13 @@ import Footer from './Components/footer/footer'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
    
-    
+    <>
+    <h1>Hii My name is Shivam Mishra</h1>
+    </>
     
   )
 }
