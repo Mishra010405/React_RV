@@ -21,12 +21,12 @@ function Login() {
         <h2>Login in </h2>
         <input type='text'
         value={username}
-        onChange={(e) => setusername(e.target.value)}
+        onChange={(e) => setUsername(e.target.value)}
         placeholder='username'/>
         {" "}
         <input type='text'
         value={password}
-        onChange={(e) => setpassword(e.target.value)}
+        onChange={(e) => setPassword(e.target.value)}
         placeholder='password'
         />
         <button>Submit</button> 
