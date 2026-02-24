@@ -1,4 +1,4 @@
-import React , {useState, useContext}from 'react'
+import React , {useState, useContext} from 'react'
 import UserContext from '../COntext/UserContext'
 
 
@@ -19,17 +19,27 @@ function Login() {
   return (
     <div>
         <h2>Login in </h2>
+
+        <form onSubmit={handlesubmit}>
+
         <input type='text'
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder='username'/>
+
         {" "}
-        <input type='text'
+
+        <input type='password'
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder='password'
         />
-        <button>Submit</button> 
+
+        {" "}
+
+        <button type='submit'>Submit</button> 
+
+        </form>
         
     </div>
   )
