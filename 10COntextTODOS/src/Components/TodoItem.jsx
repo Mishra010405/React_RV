@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useTodo } from '../contexts/TodoContext';
+import { useTodo } from '../Context/todosContext';
 
 function TodoItem({todo}) {
     const [isTodoEditable , setIseditable] = useState(false)
@@ -48,7 +48,7 @@ function TodoItem({todo}) {
               }}
               disabled={todo.completed}
           >
-              {isTodoEditable ? "" : ""}
+              {isTodoEditable ? "📁" : "✏️"}
           </button>
           {/* Delete Todo Button */}
           <button
