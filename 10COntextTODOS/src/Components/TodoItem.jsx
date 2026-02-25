@@ -12,7 +12,7 @@ function TodoItem({todo}) {
     }
 
     const toggleCompleted = () => {
-        // toggleComplete(todo.id)
+        toggleComplete(todo.id)
     }
 
     return(
