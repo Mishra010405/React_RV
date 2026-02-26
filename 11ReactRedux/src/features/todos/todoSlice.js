@@ -25,16 +25,13 @@ export const todoSlice = createSlice({
         },
         
         // Update Todo
-        updateTodo: (state, action ) => {
-            const {id,text} = action.payload;
-
-            const todo = state.todos.find(
+        updateTodo: (state, action) => {
+            const todo  = state.todos.find(
                 (todo) => todo.id === id
             );
             if(todo) {
-                todo.text = text;   
+                todo.text = text;
             }
-
         }
     }
 })
