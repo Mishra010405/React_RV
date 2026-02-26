@@ -32,10 +32,17 @@ export const todoSlice = createSlice({
             if(todo) {
                 todo.text = text;
             }
+        },
+
+        // datetodo
+        daleteTodo : (state,action) => {
+            state.todos = state.todos.filter(
+                (todo) => todo.id !== action.payload
+            );
         }
     }
 })
 
-export const {addTodo , removeTodo, updateTodo} = todoSlice.actions
+export const {addTodo , removeTodo, updateTodo , daleteTodo} = todoSlice.actions
 
 export default todoSlice.reducer
