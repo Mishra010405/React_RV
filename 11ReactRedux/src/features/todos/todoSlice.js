@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const todoSlice = createSlice({
-    name: todo,
+    name: 'todo',
     initialState,
     reducers: {
         // add todo
