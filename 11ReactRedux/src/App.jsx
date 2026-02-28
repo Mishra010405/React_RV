@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-    <h1>Hii, My Name is Shivam Mishra , I'm working</h1>
+    <h1>Hii, My Name is Shivam Mishra , I'm </h1>
     <AddTodo/>
     <Todos/>
     </>
