@@ -109,6 +109,22 @@ export class Service {
 
         }
     }
+
+    async uploadPost(file) {
+        try {
+            return await this.bucket.createFile(
+                config.appwriteBucketID,
+                ID.unique(),
+                file,
+            )
+
+        }
+        catch(error) {
+            console.log("Appwrite Service Error:", error);
+            return false;
+            
+        }
+    }
 }
 
 const service = new Service();
