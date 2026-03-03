@@ -74,6 +74,23 @@ export class Service {
             
         }
     } 
+
+    async getPost({slug}) {
+        try {
+            return await this.databases.listDocuments(
+                this.appwriteDatabaseID,
+                this.appwriteprojectID,
+                slug
+            )
+            return true;
+
+        }
+
+        catch (error) {
+            console.log("Appwrite Service Error:", error);
+            return false;
+        }
+    }
 }
 
 const service = new Service();
