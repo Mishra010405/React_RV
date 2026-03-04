@@ -87,7 +87,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Contact Us....
+                                        Contact Us
                                     </Link>
                                 </li>
                                 <li>
@@ -104,7 +104,7 @@ function Footer() {
                     <div className="w-full p-6 md:w-1/2 lg:w-3/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Legals
+                                Legal
                             </h3>
                             <ul>
                                 <li className="mb-4">
