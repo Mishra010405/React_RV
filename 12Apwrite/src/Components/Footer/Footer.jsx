@@ -30,7 +30,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Features
+                                        Feature
                                     </Link>
                                 </li>
                                 <li className="mb-4">
