@@ -71,7 +71,7 @@ function Footer() {
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
                                     >
-                                        Accounts
+                                        Account
                                     </Link>
                                 </li>
                                 <li className="mb-4">
