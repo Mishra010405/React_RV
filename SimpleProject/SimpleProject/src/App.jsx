@@ -12,7 +12,10 @@ function App() {
 
   return (
     <>
-      tiply
+      <h1 {value}</h1>
+
+      <button onClick={multipliedfive}>
+        Click to Multiply
       </button>
 
       <hr />
