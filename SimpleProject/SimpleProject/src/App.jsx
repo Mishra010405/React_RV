@@ -12,11 +12,7 @@ function App() {
 
   return (
     <>
-      <h1>Main Value: {value}</h1>
-
-      <button onClick={multipliedfive}>
-        Click to Multiply
-      </button>
+      
 
       <hr />
 
