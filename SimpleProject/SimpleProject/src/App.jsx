@@ -20,7 +20,7 @@ function App() {
 
       <hr />
 
-      <h2>Multiplied Value :  {multiplied}</h2>
+      Value :  {multiplied}</h2>
     </>
   );
 }
