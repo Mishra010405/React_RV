@@ -7,22 +7,4 @@ function App() {
 
   const multipliedfive = () => {
     setMultiplied(value * 5);
-    setValue(value+1);
-  };
-
-  return (
-    <>
-      <h1>Main Value: {value}</h1>
-
-      <button onClick={multipliedfive}>
-        Click to Multiply
-      </button>
-
-      <hr />
-
-      <h2>Multiplied Value :  {multiplied}</h2>
-    </>
-  );
-}
-
-export default App;
+    set
