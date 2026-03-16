@@ -17,12 +17,3 @@ function App() {
       <button onClick={multipliedfive}>
         Click to Multiply
       </button>
-
-      <hr />
-
-      <h2>Multiplied Value :  {multiplied}</h2>
-    </>
-  );
-}
-
-export default App;
