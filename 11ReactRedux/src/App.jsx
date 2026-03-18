@@ -8,7 +8,11 @@ import AddTodo from './Components/AddTodo'
 function App() {
   
 
-  
+  return (
+    <>
+    <h1>Hii, My Name is Shivam Mishra </h1>
+    <AddTodo/>
+    <Todos/>
     </>
     
   )
