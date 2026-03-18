@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo fr
+import viteLogo from '/vite.svg'
+import './App.css'
+import Todos from './Components/Todos'
+import AddTodo from './Components/AddTodo'
+
+function App() {
+  
 
   return (
     <>
