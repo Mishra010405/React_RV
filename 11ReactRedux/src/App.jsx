@@ -8,7 +8,10 @@ import AddTodo from './Components/AddTodo'
 function App() {
     return (
       <>
-     
+      <h1>Learn About the redux toolkit</h1>
+      <AddTodo/>
+      <Todos/>
+      </>
     )
     
   
