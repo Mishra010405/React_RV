@@ -18,7 +18,9 @@ function App() {
         Click to Multiply
       </button>
 
-      <hre :  {multiplied}</h2>
+      <hr />
+
+      <h2>Multiplied Value :  {multiplied}</h2>
     </>
   );
 }
