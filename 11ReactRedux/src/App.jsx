@@ -5,13 +5,7 @@ import './App.css'
 import Todos from './Components/Todos'
 import AddTodo from './Components/AddTodo'
 
-function App() {
-    return (
-      <>
-      <h1>Learn About the redux toolkit</h1>
-      <AddTodo/>
-      <Todos/>
-      </>
+func
     )
     
   
